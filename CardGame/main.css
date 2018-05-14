@@ -1,0 +1,141 @@
+body {
+    margin: 0;
+    text-align: center;
+    background: #CFD0CF;
+    font-family: sans-serif;
+    color: #434344;
+}
+
+.grid {
+    width: 625px;
+    margin: 0 auto;
+    font-size: 0px;
+}
+
+input[type=checkbox] {
+    display: none;
+}
+
+.page_title {
+    margin: 40px 0;
+    font-size: 42px;
+}
+
+.row {
+    margin-bottom: 25px;
+}
+
+.timer {
+    font-size: 32px;
+    margin-top: 30px;
+}
+
+.card {
+    position: relative; /* Относительное позиционирование */
+    transform-style: preserve-3d; /* Вращение в 3D */
+    width: 130px;
+    height: 130px;
+    transition: 1s; /* Время вращения */
+    display: inline-block;
+    perspective: 600px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 9px;
+    margin-right: 25px;
+}
+
+input[type=checkbox]:checked + .card {
+    transform: rotateY(180deg); /* При наведении вращаем фото */
+}
+
+.card_side {
+    position: absolute; /* Абсолютное позиционирование */
+    top: 0;
+    bottom: 0; /* Задаём так равную высоту */
+}
+
+.card_jacket {
+    /* Вращаем по оси Y */
+    backface-visibility: hidden; /* Скрываем обратную поверхность */
+    width: 130px;
+    height: 130px;
+    border: 5px solid white;
+    border-radius: 9px;
+    background: linear-gradient(45deg, #22AB93, #19668D);
+    box-sizing: border-box;
+    perspective: 600px;
+}
+
+.card_face {
+    transform: rotateY(180deg);
+    font-size: 75px;
+    padding: 12px;
+    background: white;
+    box-sizing: border-box;
+    backface-visibility: hidden;
+    width: 130px;
+    height: 130px;
+    border-radius: 9px;
+    perspective: 600px;
+}
+
+.not_paired_card {
+    background: #f44336;
+}
+
+.paired_card {
+    background: #5AD66F;
+}
+
+.tryAgainSection, .playAgainSection {
+    display: none;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    top: 0;
+}
+
+.tryAgainForm, .playAgainForm {
+    background: white;
+    min-width: 350px;
+    width: fit-content;
+    height: fit-content;
+    margin: 0 auto;
+    position: relative;
+    top: calc(50% - 94px);
+}
+
+.tryAgainFormTitle, .playAgainFormTitle {
+    padding: 30px 0px 40px 0px;
+    font: bold 0px "Arial", sans-serif;
+}
+
+.tryAgainFormTitle span, .playAgainFormTitle span {
+    display: inline-block;
+    font-size: 48px;
+    transform-origin: bottom;
+    -webkit-transition: letterAnimation 1s ease-in-out;
+    animation: letterAnimation 1s ease-in-out infinite;
+}
+
+@keyframes letterAnimation {
+    0%, 100% {
+        transform: scale(1, 1);
+    }
+    50%{
+        transform: scale(1, 1.7);
+    }
+}
+
+.tryAgainFormButton, .playAgainFormPlayAgainButton {
+    background: linear-gradient(270deg, #22AB93, #19668D);
+    border-radius: 9px;
+    height: 40px;
+    width: fit-content;
+    padding: 0px 30px;
+    margin: 0 auto 30px;
+    font: 20px/40px "Arial", sans-serif;
+    color: white;
+    box-shadow: 1px 1px 1px gray;
+}

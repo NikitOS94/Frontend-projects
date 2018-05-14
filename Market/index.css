@@ -1,0 +1,194 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);
+
+.price .new_price {
+    font: bold 18px SANS-SERIF;
+    color: darkred;
+}
+
+.old_price {
+    font: normal 15px sans-serif;
+    text-decoration: line-through;
+}
+
+.category_item a {
+    color: gray !important;
+    font: 13px Serif;
+}
+
+
+
+article img {
+    width: 100%;
+}
+
+.cats_list {
+    margin: 0 auto;
+}
+
+.cats_greed {
+    width: 960px;
+    margin: 0 auto;
+}
+
+.cat_name {
+    margin: 5px 0;
+}
+
+.cat_rating {
+    margin: 5px 0;
+}
+
+#grid:checked {
+    background: red;
+}
+
+.cat_rating {
+    display: inline-block;
+    padding: 0px;
+    border: 0;
+}
+
+.cat_rating > input {
+    display: none;
+}
+
+/* Order correctly by floating highest to the right */
+.cat_rating > label {
+    float: right;
+}
+
+/* The star of the show */
+.cat_rating > label:before {
+    display: inline-block;
+    font-size: 1.1rem;
+    padding: .3rem .2rem;
+    margin: 0;
+    cursor: pointer;
+    font-family: FontAwesome;
+    content: "\f005 "; /* full star */
+}
+
+/* Half star trick */
+.cat_rating .half:before {
+    content: "\f089 "; /* half star no outline */
+    position: absolute;
+    padding-right: 0;
+}
+
+/* Click + hover color */
+input:checked ~ label, /* color current and previous stars on checked */
+label:hover, label:hover ~ label {
+    color: #73B100;
+}
+
+/* color previous stars on hover */
+
+/* Hover highlights */
+input:checked + label:hover, input:checked ~ label:hover, /* highlight current and previous stars */
+input:checked ~ label:hover ~ label, /* highlight previous selected stars for new rating */
+label:hover ~ input:checked ~ label /* highlight previous selected stars */
+{
+    color: #A6E72D;
+}
+
+.cat_name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+article:hover a {
+    color: red;
+}
+
+article:hover img {
+    opacity: 0.7;
+}
+
+#grid {
+    background: none;
+    padding: 0;
+    border: 0;
+    display: none;
+}
+
+#list {
+    display: none;
+}
+
+#grid:checked + label img {
+    border: 2px solid gold;
+    box-shadow: 2px 2px 3px gold;
+}
+
+#list:checked ~ .articles article {
+    max-width: 100% !important;
+    padding: 20px 0px;
+    border-bottom: 2px dotted #949496;
+}
+
+#list:checked ~ .articles article img {
+    width: 25%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#list:checked ~ .articles article header {
+    width: 40%;
+    display: inline-block;
+    margin: 0 3%;
+    vertical-align: top;
+}
+
+#list:checked ~ .articles article p {
+    width: 26%;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0;
+}
+
+#list:checked + label img {
+    border: 2px solid gold;
+    box-shadow: 2px 2px 3px gold;
+}
+
+.view_style + input {
+    display: none;
+}
+
+.header {
+    width: 40%;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 2%;
+}
+
+@media screen and (max-width: 1300px){
+    #grid:checked ~ .articles article {
+        width: 29%;
+        display: inline-block;
+        margin: 20px;
+        vertical-align: baseline;
+    }
+
+    #list:checked ~ .articles article {
+        max-width: 100% !important;
+        padding: 20px 0px;
+        border-bottom: 2px dotted #949496;
+    }
+}
+
+@media screen and (min-width: 1300px){
+    #grid:checked ~ .articles article {
+        width: calc(91% / 4);
+        display: inline-block;
+        margin: 0 1%;
+        vertical-align: baseline;
+    }
+
+    #list:checked ~ .articles article {
+        max-width: 100% !important;
+        padding: 20px 0px;
+        border-bottom: 2px dotted #949496;
+    }
+}
